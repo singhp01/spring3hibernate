@@ -28,6 +28,8 @@
  </distributionManagement>
 	<reporting>
 		<plugins>
+
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
@@ -42,6 +44,21 @@
 					<xmlOutput>true</xmlOutput>
 				</configuration>
 			</plugin>
+
+			<plugin>
+                                <groupId>org.codehaus.mojo</groupId>
+                                <artifactId>maven-cobertura-plugin</artifactId>
+                                <version>2.5.1</version>
+                                <configuration>
+                                        <!-- Enables analysis which takes more memory but finds more bugs. If
+                                                you run out of memory, changes the value of the effort element to 'low'. -->
+                                        <effort>Max</effort>
+										<formats>
+                                        <format>html</format>
+										</formats>
+                                </configuration>
+                        </plugin>
+
 		</plugins>
 	</reporting>
 
@@ -59,6 +76,23 @@
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.14</version>
 			</plugin>
+
+
+<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <configuration>
+        <reportPlugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+          </plugin>
+        </reportPlugins>
+      </configuration>
+    </plugin>
+
+
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
@@ -93,7 +127,7 @@
 				<version>2.5.1</version>
 				<configuration>
 					<formats>
-						<format>xml</format>
+						<format>html</format>
 					</formats>
 				</configuration>
 				<executions>
