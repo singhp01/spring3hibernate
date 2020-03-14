@@ -1,4 +1,4 @@
 webserver1,install,nano
 webserver1,install,vim
-webserver1,service,nginx
+webserver1,service,sshd
 webserver1,copy,/root/1212,/root/temp/1111
