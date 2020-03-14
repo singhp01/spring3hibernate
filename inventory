@@ -1,0 +1,5 @@
+webserver1,ubuntu,10.0.0.1
+webserver2,ubuntu,10.0.0.2
+appserver1,ubuntu,10.0.0.3
+appserver2,ubuntu,10.0.0.4
+dbserver,ubuntu,10.0.0.5
